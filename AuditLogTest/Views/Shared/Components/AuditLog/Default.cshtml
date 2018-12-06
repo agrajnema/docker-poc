@@ -1,0 +1,41 @@
+﻿@model IEnumerable<AuditLog>
+
+
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>TimeStamp</th>
+                <th>Updated By</th>
+                <th>Changes</th>
+            </tr>
+            @foreach (var auditLog in Model)
+            {
+                <tr>
+                    <td class="col-md-2">@auditLog.Timestamp</td>
+                    <td class="col-md-2">@auditLog.LoggedInUserName</td>
+                    <td>
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="col-md-3">Field Name</th>
+                                    <th>Old Value</th>
+                                    <th>New Value</th>
+                                </tr>
+                            </thead>
+                            @foreach (var fieldLog in auditLog.Changes)
+                            {
+                                <tr>
+                                    <td>@fieldLog.FieldName</td>
+                                    <td>@fieldLog.OldValue</td>
+                                    <td>@fieldLog.NewValue</td>
+                                </tr>
+                            }
+                        </table>
+
+                    </td>
+                </tr>
+            }
+        </thead>
+    </table>
+</div>

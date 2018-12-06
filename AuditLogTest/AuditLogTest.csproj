@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="db\**" />
+    <Content Remove="db\**" />
+    <EmbeddedResource Remove="db\**" />
+    <None Remove="db\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\CreateCustomerView.cshtml" />
+    <Content Remove="Views\CustomerDetailView.cshtml" />
+    <Content Remove="Views\CustomerListView.cshtml" />
+    <Content Remove="Views\UpdateCustomer.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Migrations\Dockerfile" />
+    <None Remove="Migrations\V1_Migration.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CompareNETObjects" Version="4.57.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Customers\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+</Project>
