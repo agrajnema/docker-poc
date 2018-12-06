@@ -28,7 +28,6 @@ namespace AuditLogTest
             //var connString = $"Data Source={hostname};Initial Catalog=AuditLogTestDb;User ID=sa;Password={password};";
 
             // var connString = @"User ID=audit_app;Password=docker;Host=postgres;Port=5432;Database=auditlogdb;Pooling=true;CommandTimeout=3000";
-            //@"Server=172.17.0.1,1433;Database=AuditLogTestDb;User=sa;Password=Testing_123;Trusted_Connection=False";
 
             //services.AddDbContext<AuditLogDbContext>(options => options.UseSqlServer(connString));
 
