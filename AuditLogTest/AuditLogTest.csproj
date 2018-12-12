@@ -19,8 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Migrations\Dockerfile" />
+    <None Remove="Infrastructure\Teamcity\agent\Dockerfile" />
     <None Remove="Migrations\V1_Migration.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Infrastructure\Teamcity\agent\Dockerfile" />
   </ItemGroup>
 
   <ItemGroup>
