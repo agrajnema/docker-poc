@@ -4,10 +4,10 @@ WORKDIR /build
 
 #Restore
 COPY AuditLogTest/AuditLogTest.csproj ./AuditLogTest/
-RUN dotnet restore AuditLogTest/AuditLogTest.csproj
+RUN dotnet restore AuditLogTest/AuditLogTest.csproj --configfile=NuGet.Config
 
 COPY AuditLogUnitTest/AuditLogUnitTest.csproj ./AuditLogUnitTest/
-RUN dotnet restore AuditLogUnitTest/AuditLogUnitTest.csproj
+RUN dotnet restore AuditLogUnitTest/AuditLogUnitTest.csproj --configfile=NuGet.Config
 
 #Copy src
 COPY . .
