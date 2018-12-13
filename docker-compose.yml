@@ -19,7 +19,9 @@ services:
         ports:
             - "1433:1433"
     migration:
-        build: ./Migrations
+        build:
+            context: .
+            dockerfile: Migrations/Dockerfile
         environment:
             SA_USER: "sa"
             SA_PASSWORD: "Testing_123"
