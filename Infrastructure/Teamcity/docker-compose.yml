@@ -8,12 +8,23 @@ services:
       - teamcity-server-logs:/opt/teamcity/logs
     ports:
       - 8111:8111
+    environment:
+      TEAMCITY_HTTP_PROXY_HOST: http://infraproxy.tower.lan
+      TEAMCITY_HTTP_PROXY_PORT: 8080
+      TEAMCITY_HTTPS_PROXY_HOST: http://infraproxy.tower.lan
+      TEAMCITY_HTTPS_PROXY_PORT: 8080
+      ENABLE_NUGET_PACKAGE_STORE: "true"
     restart: unless-stopped
   teamcity-agent:
     image: jetbrains/teamcity-agent:latest
     build: ./agent
     environment:
       SERVER_URL: http://teamcity:8111
+      TEAMCITY_HTTP_PROXY_HOST: http://infraproxy.tower.lan
+      TEAMCITY_HTTP_PROXY_PORT: 8080
+      TEAMCITY_HTTPS_PROXY_HOST: http://infraproxy.tower.lan
+      TEAMCITY_HTTPS_PROXY_PORT: 8080
+      ENABLE_NUGET_PACKAGE_STORE: "true"
     volumes:
       - teamcity-agent-conf:/data/teamcity_agent/conf
       - /opt/buildagent/work:/opt/buildagent/work

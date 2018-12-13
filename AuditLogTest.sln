@@ -7,6 +7,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditLogTest", "AuditLogTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuditLogUnitTest", "AuditLogUnitTest\AuditLogUnitTest.csproj", "{4E51E0AE-8A4D-4443-ACF2-417BF7D50A0A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CC198494-CAD6-4820-8A4A-A4437C5497F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "teamcity", "teamcity", "{B98A5FAA-9A68-4C5F-825F-F9C204167411}"
+	ProjectSection(SolutionItems) = preProject
+		Infrastructure\Teamcity\docker-compose.yml = Infrastructure\Teamcity\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "registry", "registry", "{7E824734-6DEE-4168-BFCB-7945FA65E1B2}"
+	ProjectSection(SolutionItems) = preProject
+		Infrastructure\Registry\docker-compose.yml = Infrastructure\Registry\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{0A2F16C3-793B-406C-BA6B-32EC3CA6DFCA}"
+	ProjectSection(SolutionItems) = preProject
+		Migrations\Dockerfile = Migrations\Dockerfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +41,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B98A5FAA-9A68-4C5F-825F-F9C204167411} = {CC198494-CAD6-4820-8A4A-A4437C5497F9}
+		{7E824734-6DEE-4168-BFCB-7945FA65E1B2} = {CC198494-CAD6-4820-8A4A-A4437C5497F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {01702E48-532F-4480-9A17-232D620D239F}
