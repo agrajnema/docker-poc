@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
@@ -16,15 +16,6 @@
     <Content Remove="Views\CustomerDetailView.cshtml" />
     <Content Remove="Views\CustomerListView.cshtml" />
     <Content Remove="Views\UpdateCustomer.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Infrastructure\Teamcity\agent\Dockerfile" />
-    <None Remove="Migrations\V1_Migration.sql" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Infrastructure\Teamcity\agent\Dockerfile" />
   </ItemGroup>
 
   <ItemGroup>

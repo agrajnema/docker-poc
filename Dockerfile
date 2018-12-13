@@ -15,6 +15,7 @@ RUN dotnet restore AuditLogUnitTest/AuditLogUnitTest.csproj --configfile=./Audit
 COPY . .
 
 #Run Test
+ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test AuditLogUnitTest/AuditLogUnitTest.csproj
 
 #Publish 
