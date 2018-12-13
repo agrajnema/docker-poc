@@ -1,7 +1,7 @@
 version: "3"
 services:
     web:
-        image: auditlogapp
+        image: my-registry:55000/auditlogapp:ci-${BUILD_NUMBER}
         build:
             context: .
         ports:
